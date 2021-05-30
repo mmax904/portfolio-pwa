@@ -1,5 +1,5 @@
-var CACHE_NAME_STATIC = 'my-site-pre-cache-v4';
-var CACHE_NAME_DYNAMIC = 'my-site-dynamic-cache-v4';
+var CACHE_NAME_STATIC = 'my-site-pre-cache-v1';
+var CACHE_NAME_DYNAMIC = 'my-site-dynamic-cache-v1';
 var urlsToCache = [
   '/',
   '/index.html',
@@ -46,6 +46,7 @@ function invalidResponse(res) {
 }
 
 self.addEventListener('install', function (event) {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME_STATIC)
       .then(function (cache) {
@@ -143,13 +144,15 @@ function cacheThenNetwork(event) {
 }
 
 self.addEventListener('fetch', function (event) {
+  const headerAccepts = event.request.headers.get('accept');
+
   // check if request is made by chrome extensions or web page
   // if request is made for web page url must contains http.
   if (event.request.url.indexOf('http') !== 0) return; // skip the request. if request is not made with http protocol
   else if (isInArray(event.request.url, urlsToCache)) {
     cacheOnly(event);
   }
-  else if (event.request.headers.get('accept').includes('image/')) {
+  else if (headerAccepts.includes('image/') && !headerAccepts.includes('text/html')) {
     imageMatchWithNwFallback(event);
   }
   else {

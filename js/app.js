@@ -17,14 +17,18 @@ if('serviceWorker' in navigator) {
 /**
  * To unregister the sw
  */
-// navigator.serviceWorker.getRegistrations()
-//   .then(function(registrations) {
-//     for(let registration of registrations) {
-//       registration.unregister()
-//   }})
+/**
+navigator.serviceWorker.getRegistrations()
+  .then(function(registrations) {
+    for(let registration of registrations) {
+      registration.unregister()
+  }})
+*/
 
+/**
 window.addEventListener('beforeinstallprompt', function(event){
     event.preventDefault();
     deferredPrompt = event;
     return false;
 });
+*/
