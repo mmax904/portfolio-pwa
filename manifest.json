@@ -1,0 +1,39 @@
+{
+    "name": "Manish Mahant's Resume | MERN Stack Developer",
+    "short_name": "Manish Mahant's Resume",
+    "start_url": "/index.html",
+    "scope": ".",
+    "display": "standalone",
+    "background_color": "#40514E",
+    "theme_color": "#66BFBF",
+    "description": "Talented Software Developer(MERN stack) offering 5+ years of experience in producing and updating web applications and mobile APIs. Optimised structures and processes to accomplish customer targets and promote company loyalty. Expert in diverse programming languages, including PHP, NodeJS, ReactJs, NoSQL and SQL.",
+    "dir": "ltr",
+    "lang": "en-US",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "images/app-icon-46x46.png",
+            "type": "image/png",
+            "sizes": "46x46",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/app-icon-92x92.png",
+            "type": "image/png",
+            "sizes": "92x92",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/app-icon-144x144.png",
+            "type": "image/png",
+            "sizes": "144x144",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/app-icon-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ]
+}
